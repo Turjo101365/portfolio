@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   Clock,
-  Send,
-  Building2,
   Shield,
   Boxes,
   FileText,
@@ -44,15 +42,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-transparent pt-10 pb-16 px-4 sm:px-6">
-      {/* Centered Carousel Indicator Dots matching reference screenshot */}
-      <div className="flex justify-center items-center gap-2 mb-6" aria-hidden="true">
-        <span className="h-1.5 w-6 rounded-full bg-[#1b4329]" />
-        <span className="h-1.5 w-1.5 rounded-full bg-[#1b4329]/40" />
-        <span className="h-1.5 w-1.5 rounded-full bg-[#1b4329]/40" />
-        <span className="h-1.5 w-1.5 rounded-full bg-[#1b4329]/40" />
-      </div>
-
+    <footer className="w-full bg-transparent pt-6 pb-16 px-4 sm:px-6">
       {/* Floating Dark Forest Green Card */}
       <div className="relative mx-auto max-w-6xl rounded-[2.5rem] bg-gradient-to-br from-[#0c2b1b] via-[#092215] to-[#06180f] border border-emerald-500/20 p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
         {/* Subtle Ambient Radial Highlight */}
@@ -87,8 +77,8 @@ export const Footer: React.FC = () => {
           </button>
         </div>
 
-        {/* 4-Column Grid */}
-        <div className="mt-10 pt-8 border-t border-emerald-500/15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 3-Column Grid */}
+        <div className="mt-10 pt-8 border-t border-emerald-500/15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Column 1: Bio + Status + Time + Socials */}
           <div className="space-y-4">
             <p className="text-xs sm:text-[13px] text-emerald-100/70 leading-relaxed font-sans">
@@ -222,66 +212,12 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-
-          {/* Column 4: OPERATIONS DESK */}
-          <div className="space-y-4">
-            <h3 className="flex items-center gap-2 text-xs font-bold font-mono tracking-wider text-white uppercase mb-4">
-              <span className="text-emerald-400">●</span>
-              <span>OPERATIONS DESK</span>
-            </h3>
-
-            <div className="space-y-3 text-xs">
-              <div className="flex items-start gap-2.5 text-emerald-100/75">
-                <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-white">Fair Ground Hours</div>
-                  <div className="text-[11px] text-emerald-200/60 font-mono">Daily: 9:00 AM – 11:00 PM BST</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2.5 text-emerald-100/75">
-                <Building2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-white">Stall Lease Secretariat</div>
-                  <div className="text-[11px] text-emerald-200/60 font-mono">Dhaka, Bangladesh (UTC+6)</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-2">
-              <a
-                href="mailto:turjo5892@gmail.com"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium px-5 py-2.5 rounded-full text-xs shadow-md shadow-emerald-950/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>Get in Touch with Desk</span>
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Row */}
         <div className="mt-10 pt-6 border-t border-emerald-500/15 flex flex-wrap items-center justify-between gap-4 text-xs">
           <div className="font-mono text-emerald-100/40 text-[11px]">
             © {new Date().getFullYear()} Tanmoy Chowdhury Turjo. All rights reserved.
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded bg-[#0c2a1a] border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
-              ASP.NET Core 8 MVC
-            </span>
-            <span className="rounded bg-[#0c2a1a] border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
-              SQL Server 2022
-            </span>
-            <span className="rounded bg-[#0c2a1a] border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
-              Row-Level UPDLOCK
-            </span>
-            <span className="rounded bg-[#0c2a1a] border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
-              Dapper • EF Core
-            </span>
-            <span className="rounded bg-[#0c2a1a] border border-emerald-500/20 px-2 py-0.5 font-mono text-[10px] text-emerald-300">
-              Python • PyTorch
-            </span>
           </div>
 
           <div className="flex items-center gap-3 text-xs font-mono text-emerald-200/60">
