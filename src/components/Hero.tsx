@@ -9,13 +9,13 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   return (
     <section id="top" className="relative -mx-6 overflow-hidden px-6 pt-16 pb-20 sm:pt-24">
-      {/* Radiant background glow matching fairuz-anadi */}
+      {/* Radiant background glow matching subtle theme */}
       <div aria-hidden="true" className="aurora pointer-events-none absolute inset-0" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[380px] rounded-full bg-gradient-to-b from-amber-400/25 via-emerald-600/18 to-transparent blur-3xl opacity-85"
+        className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[680px] h-[320px] rounded-full bg-gradient-to-b from-emerald-500/12 via-emerald-700/6 to-transparent blur-3xl opacity-40"
       />
-      <div aria-hidden="true" className="grid-field pointer-events-none absolute inset-0 opacity-80" />
+      <div aria-hidden="true" className="grid-field pointer-events-none absolute inset-0 opacity-40" />
 
       <div className="relative mx-auto max-w-6xl">
         <p className="label mb-8 flex items-center gap-3 text-forest-700">

@@ -29,18 +29,18 @@
     mask-image: radial-gradient(75% 65% at 50% 30%, #000 35%, transparent 100%);
   }
 
-  /* Aurora atmospheric background glow */
+  /* Aurora atmospheric background glow - calmed down for comfortable viewing */
   .aurora {
-    background: radial-gradient(44rem 26rem at 10% -20%, rgba(46, 93, 38, 0.18), transparent 70%),
-                radial-gradient(38rem 24rem at 88% -10%, rgba(15, 118, 110, 0.16), transparent 70%),
-                radial-gradient(34rem 22rem at 55% -5%, rgba(217, 119, 6, 0.15), transparent 70%);
+    background: radial-gradient(40rem 22rem at 10% -20%, rgba(46, 93, 38, 0.035), transparent 70%),
+                radial-gradient(36rem 20rem at 88% -10%, rgba(15, 118, 110, 0.025), transparent 70%),
+                radial-gradient(30rem 18rem at 50% -5%, rgba(16, 185, 129, 0.02), transparent 70%);
   }
 
   @supports (color: color-mix(in lab, red, red)) {
     .aurora {
-      background: radial-gradient(44rem 26rem at 10% -20%, color-mix(in srgb, #2E5D26 18%, transparent), transparent 70%),
-                  radial-gradient(38rem 24rem at 88% -10%, color-mix(in srgb, #0F766E 16%, transparent), transparent 70%),
-                  radial-gradient(34rem 22rem at 55% -5%, color-mix(in srgb, #D97706 15%, transparent), transparent 70%);
+      background: radial-gradient(40rem 22rem at 10% -20%, color-mix(in srgb, #2E5D26 3.5%, transparent), transparent 70%),
+                  radial-gradient(36rem 20rem at 88% -10%, color-mix(in srgb, #0F766E 2.5%, transparent), transparent 70%),
+                  radial-gradient(30rem 18rem at 50% -5%, color-mix(in srgb, #10B981 2%, transparent), transparent 70%);
     }
   }
 
