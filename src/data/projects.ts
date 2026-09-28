@@ -171,7 +171,8 @@ export const projects: Project[] = [
     accent: 'cyan',
     technologies: ['Node.js', 'Express.js', 'React 18', 'LangChain.js 0.3', 'MySQL 8.0', 'Docker Compose', 'Tailwind CSS', 'Vite 6'],
     githubUrl: 'https://github.com/Turjo101365/ai-chatbot-web',
-    isLive: false,
+    isLive: true,
+    liveUrl: 'https://omnichat-ai-zqzu.onrender.com',
     achievement: '🧠 Decoupled Multi-Model Architecture',
     badgeLabel: 'LangChain · RAG Pipeline',
     caseStudy: {
