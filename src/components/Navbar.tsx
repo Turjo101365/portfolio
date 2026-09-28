@@ -10,6 +10,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('top');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
       if (totalHeight > 0) {
         setScrollProgress((window.scrollY / totalHeight) * 100);
       }
+      setIsScrolled(window.scrollY > 15);
 
       const sections = ['top', 'work', 'deployments', 'research', 'stack', 'awards', 'about'];
       for (const section of sections) {
@@ -37,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
 
   const navLinks = [
     { name: 'Home', href: '#top', id: 'top' },
-    { name: 'Selected Work', href: '#work', id: 'work' },
+    { name: 'Projects', href: '#work', id: 'work' },
     { name: 'Live Apps', href: '#deployments', id: 'deployments' },
     { name: 'Research', href: '#research', id: 'research' },
     { name: 'Tech Stack', href: '#stack', id: 'stack' },
@@ -50,117 +52,133 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
       {/* Top Reading Progress Bar */}
       <div aria-hidden="true" className="fixed inset-x-0 top-0 z-[60] h-[2.5px] bg-transparent">
         <div
-          className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-300 transition-[width] duration-75"
+          className="h-full bg-gradient-to-r from-[#1c3c18] via-[#2e5d26] to-[#4e8740] transition-[width] duration-75"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      {/* Full-Width Horizontal Header with MelaFair Dark Forest Styling */}
-      <header className="no-print sticky top-0 z-50 w-full border-b border-emerald-500/20 bg-[#071f13]/95 backdrop-blur-xl shadow-lg transition-all">
+      {/* Floating Capsule Navigation Bar matching MELA */}
+      <header className="sticky top-2 sm:top-3 z-50 px-3 sm:px-6 transition-all duration-300">
         <nav
+          id="mainNavbar"
           aria-label="Main"
-          className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5"
+          className={`nav-capsule mx-auto flex max-w-6xl items-center justify-between rounded-full bg-white/95 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 border border-[#dbe6d6] transition-all ${
+            isScrolled ? 'nav-scrolled' : 'shadow-md shadow-[#1c3c18]/5'
+          }`}
         >
-          {/* Logo & Identity (MelaFair style badge + title + subtitle) */}
-          <a href="#top" className="flex items-center gap-3 group select-none">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#00d07d] text-[#051b0f] font-black text-base shadow-sm group-hover:scale-105 transition-transform">
-              T
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-white text-sm sm:text-base group-hover:text-emerald-300 transition-colors">
-                TANMOY CHOWDHURY TURJO
-              </span>
-              <span className="font-mono text-[10px] text-emerald-400 font-semibold tracking-wider hidden sm:block">
-                FULL-STACK &amp; AI SYSTEMS CORE
-              </span>
-            </div>
-          </a>
+          {/* Logo & Brand (MELA Style) */}
+          <div className="flex items-center gap-6 lg:gap-8">
+            <a href="#top" className="flex items-center space-x-2.5 group select-none">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-[#1c3c18] via-[#244f21] to-[#2e5d26] text-white flex items-center justify-center font-black text-lg shadow-sm group-hover:scale-105 group-hover:rotate-6 group-hover:shadow-md group-hover:shadow-emerald-900/20 transition-all duration-300">
+                T
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center gap-1.5 leading-none">
+                  <span className="text-lg sm:text-2xl font-black tracking-tight text-[#1c3c18] group-hover:text-[#2e5d26] transition-colors">
+                    TURJO
+                  </span>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#2e5d26] bg-[#e5efe2] group-hover:bg-[#2e5d26] group-hover:text-white px-2 py-0.5 rounded-full transition-all duration-300 shadow-xs">
+                    CORE
+                  </span>
+                </div>
+                <span className="text-[9px] text-[#557b4f] font-semibold uppercase tracking-wider mt-0.5">
+                  Full-Stack &amp; AI Systems
+                </span>
+              </div>
+            </a>
 
-          {/* Desktop Nav Items & Actions */}
-          <div className="flex items-center gap-6">
-            <ul className="hidden items-center gap-6 text-xs text-white/70 lg:flex font-medium tracking-wider uppercase">
-              {navLinks.map((link) => (
-                <li key={link.id}>
+            {/* Desktop Navigation Links (Pill Style) */}
+            <div className="hidden lg:flex items-center space-x-1 lg:space-x-1.5 text-xs lg:text-sm font-semibold text-[#40543e]">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
                   <a
+                    key={link.id}
                     href={link.href}
-                    className={`pb-1 transition-all duration-150 ${
-                      activeSection === link.id
-                        ? 'text-[#00d07d] border-b-2 border-[#00d07d] font-bold'
-                        : 'border-b-2 border-transparent hover:text-white hover:border-emerald-400/50'
+                    className={`px-3 py-1.5 rounded-full transition-all duration-200 ${
+                      isActive
+                        ? 'bg-[#e5efe2] text-[#2e5d26] font-bold shadow-xs'
+                        : 'hover:text-[#2e5d26] hover:bg-[#e5efe2]/60'
                     }`}
                   >
                     {link.name}
                   </a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={onOpenSearch}
-                aria-label="Search"
-                className="hidden items-center gap-2 border border-emerald-500/30 bg-[#0c2a1a] hover:bg-[#123824] px-3.5 py-1.5 rounded-full text-xs text-emerald-200/80 hover:text-white transition-all shadow-sm md:inline-flex"
-              >
-                <Search className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="font-sans">Search</span>
-                <kbd className="ml-1 rounded bg-[#071f13] border border-emerald-500/30 px-1.5 py-0.5 font-mono text-[9px] text-emerald-300">
-                  ⌘K
-                </kbd>
-              </button>
-
-              <button
-                onClick={onOpenContact}
-                className="hidden sm:inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-md shadow-emerald-950/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
-              >
-                Get in touch
-              </button>
-
-              {/* Mobile Hamburger */}
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label="Open menu"
-                className="border border-emerald-500/30 bg-[#0c2a1a] p-2 text-emerald-300 rounded-lg transition-colors hover:text-white lg:hidden"
-              >
-                {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-              </button>
+                );
+              })}
             </div>
+          </div>
+
+          {/* Right Side Actions & Auth */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            {/* Search Pill Button */}
+            <button
+              type="button"
+              onClick={onOpenSearch}
+              aria-label="Search"
+              className="hidden md:inline-flex items-center gap-2 border border-[#dbe6d6] bg-[#f4f8f3] hover:bg-[#e5efe2] px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#2e5d26] transition-all duration-200 shadow-xs active:scale-95"
+            >
+              <Search className="w-3.5 h-3.5 text-[#2e5d26]" />
+              <span>Search</span>
+              <kbd className="ml-1 border border-[#cce0c6] bg-white px-1.5 py-0.5 rounded font-mono text-[9px] text-[#2e5d26]">
+                ⌘K
+              </kbd>
+            </button>
+
+            {/* Primary Action Button (Get in Touch) */}
+            <button
+              onClick={onOpenContact}
+              className="relative group overflow-hidden inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#2e5d26] to-[#3b7331] hover:from-[#1c3c18] hover:to-[#2e5d26] text-white text-xs sm:text-sm font-semibold shadow-md shadow-[#2e5d26]/20 hover:shadow-lg hover:shadow-[#2e5d26]/30 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <span>Get in Touch</span>
+            </button>
+
+            {/* Mobile Hamburger Menu Button */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden w-9 h-9 rounded-full bg-[#e5efe2] text-[#2e5d26] hover:bg-[#2e5d26] hover:text-white flex items-center justify-center transition-all duration-200 focus:outline-none"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
           </div>
         </nav>
 
-        {/* Mobile Full-Width Menu Drawer */}
+        {/* Mobile Capsule Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="border-t border-emerald-500/20 bg-[#071f13]/98 backdrop-blur-xl px-6 py-5 lg:hidden animate-in fade-in slide-in-from-top-2 duration-150">
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`py-1.5 text-sm font-medium tracking-wide transition-colors ${
-                    activeSection === link.id
-                      ? 'text-[#00d07d] font-bold'
-                      : 'text-white/80 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <div className="pt-3 border-t border-emerald-500/20 flex flex-col gap-2.5">
+          <div className="mx-auto max-w-6xl mt-2 bg-white/95 backdrop-blur-xl rounded-3xl p-5 shadow-2xl border border-[#dbe6d6] transition-all duration-300 ease-out origin-top animate-in fade-in slide-in-from-top-2 lg:hidden">
+            <div className="flex flex-col space-y-2">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-4 py-2.5 rounded-2xl text-sm font-semibold flex items-center transition-colors ${
+                      isActive
+                        ? 'bg-[#e5efe2] text-[#2e5d26] font-bold'
+                        : 'text-slate-700 hover:bg-[#eef5ec] hover:text-[#2e5d26]'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
+              <div className="pt-3 border-t border-[#dbe6d6] flex flex-col gap-2.5">
                 <button
                   type="button"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenSearch();
                   }}
-                  className="flex items-center justify-between border border-emerald-500/30 p-2.5 rounded-lg text-xs text-emerald-200 bg-[#0c2a1a]"
+                  className="flex items-center justify-between border border-[#dbe6d6] bg-[#f4f8f3] p-2.5 rounded-2xl text-xs font-semibold text-[#2e5d26]"
                 >
                   <span className="flex items-center gap-2">
-                    <Search className="w-4 h-4 text-emerald-400" />
+                    <Search className="w-4 h-4 text-[#2e5d26]" />
                     <span>Search portfolio</span>
                   </span>
-                  <kbd className="border border-emerald-500/30 px-1.5 py-0.5 font-mono text-[10px] text-emerald-300 bg-[#071f13] rounded">
+                  <kbd className="border border-[#cce0c6] bg-white px-1.5 py-0.5 font-mono text-[10px] text-[#2e5d26] rounded">
                     ⌘K
                   </kbd>
                 </button>
@@ -169,9 +187,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
                     setMobileMenuOpen(false);
                     onOpenContact();
                   }}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 text-white py-2.5 rounded-lg text-xs font-semibold shadow-sm"
+                  className="w-full bg-gradient-to-r from-[#2e5d26] to-[#3b7331] text-white py-2.5 rounded-2xl text-xs font-semibold shadow-md flex items-center justify-center gap-2"
                 >
-                  Get in touch
+                  <span>Get in Touch</span>
                 </button>
               </div>
             </div>
