@@ -46,7 +46,7 @@ export const LiveDeployments: React.FC = () => {
         </svg>
       </div>
 
-      <ul className="grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3 shadow-sm">
+      <ul className="grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-2 shadow-sm">
         {deployments.map((item) => {
           const accentBarColor = {
             crimson: 'bg-crimson',

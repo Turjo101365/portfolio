@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
+import { deployments } from '../data/deployments';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -116,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-teal" />
             <p className="label text-teal">Shipped & Live</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
-              5 full-stack & AI production deployments active on the web
+              {deployments.length} full-stack & AI production deployments active on the web
             </p>
           </li>
         </ul>

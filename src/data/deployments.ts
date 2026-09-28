@@ -44,16 +44,5 @@ export const deployments: Deployment[] = [
     status: 'Operational',
     latency: '55ms',
     accent: 'purple'
-  },
-  {
-    id: 'travel-world',
-    title: 'TravelWorld Portal',
-    description: 'Comprehensive tour booking and destination management system built with Laravel and React.',
-    url: 'https://travel-world-xeys.vercel.app/',
-    githubUrl: 'https://github.com/Turjo101365/Travel-World',
-    platform: 'Vercel',
-    status: 'Operational',
-    latency: '48ms',
-    accent: 'cyan'
   }
 ];
