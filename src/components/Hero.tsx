@@ -1,0 +1,120 @@
+import React from 'react';
+import { ArrowRight, Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
+
+interface HeroProps {
+  onOpenContact: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
+  return (
+    <section id="top" className="relative -mx-6 overflow-hidden px-6 pt-16 pb-20 sm:pt-24">
+      <div aria-hidden="true" className="grid-field pointer-events-none absolute inset-0 opacity-70" />
+
+      <div className="relative mx-auto max-w-6xl">
+        <p className="label mb-8 flex items-center gap-3 text-crimson">
+          <span aria-hidden="true" className="h-px w-8 bg-crimson" />
+          Dhaka, Bangladesh
+        </p>
+
+        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <h1 className="font-display text-[3.25rem] leading-[0.98] tracking-tight sm:text-7xl lg:text-[5.5rem] font-bold text-ink">
+              Tanmoy Chowdhury Turjo
+            </h1>
+
+            <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="label bg-ink px-3 py-1.5 text-white">
+                Full-Stack & AI Systems · Python, C#, TypeScript, LLMs
+              </span>
+              <span className="label flex items-center gap-2 border border-rule-strong px-3 py-1.5 text-ink-2 bg-white">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
+                </span>
+                Available for software & AI engineering
+              </span>
+            </div>
+
+            <p className="mt-8 max-w-3xl font-display text-xl leading-[1.5] text-ink-2 sm:text-[1.55rem]">
+              I build the systems where precision, concurrency, and real-world constraints matter — 
+              hyper-local urban transit routing engines, exact microgrid LP optimization, high-throughput 
+              database architectures, and verifiable multi-LLM evaluation pipelines. Computer Science & Engineering 
+              at AUST. Most of this started at a hackathon and kept going afterwards.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center gap-3">
+          <a
+            href="#work"
+            className="inline-flex items-center justify-center gap-2 text-sm font-medium tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap bg-crimson text-white px-6 py-3 hover:bg-accent-hover shadow-[0_1px_0_0_rgba(0,0,0,0.06)]"
+          >
+            View selected work
+            <ArrowRight className="w-4 h-4" />
+          </a>
+
+          <button
+            onClick={onOpenContact}
+            className="inline-flex items-center justify-center gap-2 text-sm font-medium tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap border border-rule-strong bg-white px-6 py-3 text-ink hover:border-crimson hover:text-crimson"
+          >
+            <Mail className="w-4 h-4" />
+            Contact
+          </button>
+
+          <div className="ml-auto flex items-center gap-2">
+            <a
+              href="https://github.com/Turjo101365"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:acd776959@gmail.com"
+              aria-label="Email"
+              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <ul className="mt-16 flex flex-wrap gap-px border border-rule bg-rule shadow-sm">
+          <li className="relative flex-1 basis-64 bg-white px-6 py-5">
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-crimson" />
+            <p className="label text-crimson">National Champion</p>
+            <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
+              IEEE WIE Day 2026 National Idea Presentation Competition
+            </p>
+          </li>
+          <li className="relative flex-1 basis-64 bg-white px-6 py-5">
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-indigo" />
+            <p className="label text-indigo">Hackathon Finalist</p>
+            <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
+              AUST CSE Carnival Hackathon (4th Place) & BUP CSE Fest Hackathon
+            </p>
+          </li>
+          <li className="relative flex-1 basis-64 bg-white px-6 py-5">
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-teal" />
+            <p className="label text-teal">Shipped & Live</p>
+            <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
+              5 full-stack & AI production deployments active on the web
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+};
