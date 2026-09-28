@@ -21,13 +21,13 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ projects, onOpenCase
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
           <div className="mb-5 flex flex-col gap-1.5">
-            <span className="h-[3px] w-14 bg-crimson" />
-            <span className="h-[3px] w-10 bg-crimson/60" />
-            <span className="h-[3px] w-6 bg-crimson/30" />
+            <span className="h-[3px] w-14 bg-forest-700" />
+            <span className="h-[3px] w-10 bg-forest-700/60" />
+            <span className="h-[3px] w-6 bg-forest-700/30" />
           </div>
 
           <div className="flex items-baseline gap-5">
-            <span className="label text-crimson font-bold text-sm">01</span>
+            <span className="label text-forest-700 font-bold text-sm">01</span>
             <span aria-hidden="true" className="h-px w-12 bg-rule-strong" />
             <h2 className="font-display text-3xl tracking-tight sm:text-[2.6rem] font-bold text-ink">
               Selected work

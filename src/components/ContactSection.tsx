@@ -7,7 +7,7 @@ export const ContactSection: React.FC = () => {
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const email = 'acd776959@gmail.com';
+  const email = 'turjo5892@gmail.com';
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -37,13 +37,13 @@ export const ContactSection: React.FC = () => {
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
           <div className="mb-5 flex flex-col gap-1.5">
-            <span className="h-[3px] w-14 bg-crimson" />
-            <span className="h-[3px] w-10 bg-crimson/60" />
-            <span className="h-[3px] w-6 bg-crimson/30" />
+            <span className="h-[3px] w-14 bg-forest-700" />
+            <span className="h-[3px] w-10 bg-forest-700/60" />
+            <span className="h-[3px] w-6 bg-forest-700/30" />
           </div>
 
           <div className="flex items-baseline gap-5">
-            <span className="label text-crimson font-bold text-sm">07</span>
+            <span className="label text-forest-700 font-bold text-sm">07</span>
             <span aria-hidden="true" className="h-px w-12 bg-rule-strong" />
             <h2 className="font-display text-3xl tracking-tight sm:text-[2.6rem] font-bold text-ink">
               Get in touch
@@ -56,7 +56,7 @@ export const ContactSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-10 lg:grid-cols-2 border border-rule bg-white p-8 sm:p-12 shadow-sm">
+      <div className="grid gap-10 lg:grid-cols-2 border border-rule bg-white p-8 sm:p-12 shadow-sm rounded-2xl">
         <div>
           <h3 className="font-display text-3xl font-bold text-ink">
             Let&apos;s build something reliable together.
@@ -66,15 +66,15 @@ export const ContactSection: React.FC = () => {
             I am currently open to software engineering internships, backend architecture roles, and AI/ML research collaborations. If you are solving hard problems around distributed systems, graph optimization, or multi-LLM evaluation, reach out directly.
           </p>
 
-          <div className="mt-8 border border-rule bg-paper p-5">
-            <p className="label text-ink-3 text-[10px] mb-1">Direct Email</p>
+          <div className="mt-8 border border-rule bg-paper p-5 rounded-xl">
+            <p className="label text-forest-700 text-[10px] mb-1">Direct Email</p>
             <div className="flex items-center justify-between gap-4">
               <span className="font-mono text-base font-semibold text-ink break-all">
                 {email}
               </span>
               <button
                 onClick={handleCopy}
-                className="inline-flex items-center gap-1.5 border border-rule-strong bg-white px-3 py-1.5 text-xs text-ink hover:border-crimson hover:text-crimson transition-colors shrink-0"
+                className="inline-flex items-center gap-1.5 border border-rule bg-white px-3 py-1.5 text-xs text-ink hover:border-forest-700 hover:text-forest-700 rounded-lg transition-colors shrink-0 shadow-sm"
               >
                 {copied ? (
                   <>
@@ -96,7 +96,7 @@ export const ContactSection: React.FC = () => {
               href="https://github.com/Turjo101365"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-rule-strong bg-white px-4 py-2 text-sm text-ink-2 hover:border-crimson hover:text-crimson transition-colors"
+              className="inline-flex items-center gap-2 border border-rule bg-white px-4 py-2 text-sm text-ink-2 hover:border-forest-700 hover:text-forest-700 rounded-xl transition-colors shadow-sm"
             >
               <GithubIcon className="w-4 h-4" />
               <span>GitHub</span>
@@ -106,7 +106,7 @@ export const ContactSection: React.FC = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-rule-strong bg-white px-4 py-2 text-sm text-ink-2 hover:border-crimson hover:text-crimson transition-colors"
+              className="inline-flex items-center gap-2 border border-rule bg-white px-4 py-2 text-sm text-ink-2 hover:border-forest-700 hover:text-forest-700 rounded-xl transition-colors shadow-sm"
             >
               <LinkedinIcon className="w-4 h-4" />
               <span>LinkedIn</span>
@@ -122,7 +122,7 @@ export const ContactSection: React.FC = () => {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full border border-rule-strong bg-white p-3 text-sm text-ink focus:border-crimson focus:outline-none"
+              className="w-full border border-rule bg-paper/50 p-3 text-sm text-ink rounded-xl focus:border-forest-700 focus:bg-white focus:outline-none transition-colors"
               placeholder="e.g. Alex Hunter"
             />
           </div>
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full border border-rule-strong bg-white p-3 text-sm text-ink focus:border-crimson focus:outline-none"
+              className="w-full border border-rule bg-paper/50 p-3 text-sm text-ink rounded-xl focus:border-forest-700 focus:bg-white focus:outline-none transition-colors"
               placeholder="alex@company.com"
             />
           </div>
@@ -146,14 +146,14 @@ export const ContactSection: React.FC = () => {
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full border border-rule-strong bg-white p-3 text-sm text-ink focus:border-crimson focus:outline-none"
+              className="w-full border border-rule bg-paper/50 p-3 text-sm text-ink rounded-xl focus:border-forest-700 focus:bg-white focus:outline-none transition-colors"
               placeholder="Tell me about your project, team, or opportunity..."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-crimson py-3 text-center text-sm font-medium text-white hover:bg-accent-hover transition-colors shadow-sm inline-flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-[#1c3c18] via-[#244f21] to-[#2e5d26] py-3 text-center text-sm font-semibold text-white rounded-xl hover:shadow-lg hover:shadow-emerald-950/20 hover:scale-[1.01] active:scale-[0.99] transition-all shadow-sm inline-flex items-center justify-center gap-2"
           >
             {formSent ? (
               <>

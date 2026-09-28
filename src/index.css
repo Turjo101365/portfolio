@@ -4,15 +4,15 @@
 
 @layer base {
   body {
-    background-color: #FAF9F6;
-    color: #121212;
+    background-color: #F8FAF7;
+    color: #141E13;
     -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer utilities {
   .label {
-    @apply font-mono text-[11px] uppercase tracking-wider font-medium;
+    @apply font-mono text-[11px] uppercase tracking-wider font-semibold;
   }
   
   .font-display {
@@ -22,14 +22,14 @@
 
   /* Grid field watermark background */
   .grid-field {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(46, 93, 38, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(46, 93, 38, 0.05) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
   /* Dot field pattern */
   .dotfield {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.09) 1.2px, transparent 1.2px);
+    background-image: radial-gradient(rgba(46, 93, 38, 0.12) 1.2px, transparent 1.2px);
     background-size: 16px 16px;
   }
 }
@@ -40,12 +40,12 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF9F6;
+  background: #F8FAF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4D4CD;
+  background: #C2D4BC;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A8A89F;
+  background: #9FC193;
 }

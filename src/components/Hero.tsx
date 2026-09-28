@@ -12,8 +12,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
       <div aria-hidden="true" className="grid-field pointer-events-none absolute inset-0 opacity-70" />
 
       <div className="relative mx-auto max-w-6xl">
-        <p className="label mb-8 flex items-center gap-3 text-crimson">
-          <span aria-hidden="true" className="h-px w-8 bg-crimson" />
+        <p className="label mb-8 flex items-center gap-3 text-forest-700">
+          <span aria-hidden="true" className="h-px w-8 bg-forest-700" />
           Dhaka, Bangladesh
         </p>
 
@@ -24,10 +24,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </h1>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span className="label bg-ink px-3 py-1.5 text-white">
+              <span className="label bg-forest-900 px-3 py-1.5 text-white rounded-md shadow-sm">
                 Full-Stack & AI Systems · Python, C#, TypeScript, LLMs
               </span>
-              <span className="label flex items-center gap-2 border border-rule-strong px-3 py-1.5 text-ink-2 bg-white">
+              <span className="label flex items-center gap-2 border border-rule px-3 py-1.5 text-ink-2 bg-white rounded-md shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         <div className="mt-12 flex flex-wrap items-center gap-3">
           <a
             href="#work"
-            className="inline-flex items-center justify-center gap-2 text-sm font-medium tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap bg-crimson text-white px-6 py-3 hover:bg-accent-hover shadow-[0_1px_0_0_rgba(0,0,0,0.06)]"
+            className="inline-flex items-center justify-center gap-2 text-sm font-semibold tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap bg-gradient-to-r from-[#1c3c18] via-[#244f21] to-[#2e5d26] text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-emerald-950/20 hover:scale-[1.02] shadow-sm"
           >
             View selected work
             <ArrowRight className="w-4 h-4" />
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center justify-center gap-2 text-sm font-medium tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap border border-rule-strong bg-white px-6 py-3 text-ink hover:border-crimson hover:text-crimson"
+            className="inline-flex items-center justify-center gap-2 text-sm font-semibold tracking-tight transition-all duration-200 active:translate-y-px whitespace-nowrap border border-rule bg-white px-6 py-3 text-ink rounded-full hover:border-forest-700 hover:text-forest-700 shadow-sm"
           >
             <Mail className="w-4 h-4" />
             Contact
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+              className="border border-rule bg-white p-3 rounded-full text-ink-2 transition-all hover:border-forest-700 hover:text-forest-700 shadow-sm"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
@@ -77,37 +77,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+              className="border border-rule bg-white p-3 rounded-full text-ink-2 transition-all hover:border-forest-700 hover:text-forest-700 shadow-sm"
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href="mailto:acd776959@gmail.com"
+              href="mailto:turjo5892@gmail.com"
               aria-label="Email"
-              className="border border-rule-strong bg-white p-3 text-ink-2 transition-colors hover:border-crimson hover:text-crimson"
+              className="border border-rule bg-white p-3 rounded-full text-ink-2 transition-all hover:border-forest-700 hover:text-forest-700 shadow-sm"
             >
               <Mail className="w-4 h-4" />
             </a>
           </div>
         </div>
 
-        <ul className="mt-16 flex flex-wrap gap-px border border-rule bg-rule shadow-sm">
+        <ul className="mt-16 flex flex-wrap gap-px border border-rule bg-rule shadow-sm rounded-2xl overflow-hidden">
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
-            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-crimson" />
-            <p className="label text-crimson">AI Systems & Hackathons</p>
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-forest-700" />
+            <p className="label text-forest-700">AI Systems & Hackathons</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
               BUP CSE Fest & AUST CSE Carnival AI Build Hackathon Projects
             </p>
           </li>
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
-            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-indigo" />
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-indigo" />
             <p className="label text-indigo">Architectural Rigor</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
               Database row-level concurrency locking & exact LP optimization
             </p>
           </li>
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
-            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-teal" />
+            <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-teal" />
             <p className="label text-teal">Shipped & Live</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
               5 full-stack & AI production deployments active on the web

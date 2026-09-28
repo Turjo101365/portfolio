@@ -20,7 +20,6 @@ export const TechStackSection: React.FC = () => {
 
   return (
     <section id="stack" className="relative border-t border-rule py-16 sm:py-24">
-      {/* Big Watermark Numeral */}
       <span
         aria-hidden="true"
         className="pointer-events-none select-none font-display leading-none absolute -top-2 right-0 hidden text-[9rem] text-rule-strong opacity-40 lg:block font-bold"
@@ -32,13 +31,13 @@ export const TechStackSection: React.FC = () => {
       <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
         <div>
           <div className="mb-5 flex flex-col gap-1.5">
-            <span className="h-[3px] w-14 bg-crimson" />
-            <span className="h-[3px] w-10 bg-crimson/60" />
-            <span className="h-[3px] w-6 bg-crimson/30" />
+            <span className="h-[3px] w-14 bg-forest-700" />
+            <span className="h-[3px] w-10 bg-forest-700/60" />
+            <span className="h-[3px] w-6 bg-forest-700/30" />
           </div>
 
           <div className="flex items-baseline gap-5">
-            <span className="label text-crimson font-bold text-sm">04</span>
+            <span className="label text-forest-700 font-bold text-sm">04</span>
             <span aria-hidden="true" className="h-px w-12 bg-rule-strong" />
             <h2 className="font-display text-3xl tracking-tight sm:text-[2.6rem] font-bold text-ink">
               Technical stack
@@ -51,10 +50,10 @@ export const TechStackSection: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setFilter(tab.id)}
-              className={`label border px-3 py-1.5 transition-all text-xs ${
+              className={`label border px-3 py-1.5 rounded-full transition-all text-xs ${
                 filter === tab.id
-                  ? 'border-crimson bg-crimson text-white font-semibold'
-                  : 'border-rule-strong bg-white text-ink-2 hover:border-ink hover:text-ink'
+                  ? 'border-forest-700 bg-forest-700 text-white font-semibold shadow-sm'
+                  : 'border-rule bg-white text-ink-2 hover:border-forest-700 hover:text-forest-700 shadow-sm'
               }`}
             >
               {tab.label}
@@ -63,8 +62,7 @@ export const TechStackSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Categorized Badges Block */}
-      <div className="border border-rule bg-white divide-y divide-rule shadow-sm">
+      <div className="border border-rule bg-white divide-y divide-rule shadow-sm rounded-2xl overflow-hidden">
         {filteredSkills.map((group) => (
           <div key={group.category} className="p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="md:w-1/3">
