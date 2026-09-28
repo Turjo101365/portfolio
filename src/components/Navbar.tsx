@@ -68,20 +68,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenContact }) =
         >
           {/* Logo & Brand (MELA Style) */}
           <div className="flex items-center gap-6 lg:gap-8">
-            <a href="#top" className="flex items-center space-x-2.5 group select-none">
+            <a href="#top" className="flex items-center space-x-3 group select-none">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-[#1c3c18] via-[#244f21] to-[#2e5d26] text-white flex items-center justify-center font-black text-lg shadow-sm group-hover:scale-105 group-hover:rotate-6 group-hover:shadow-md group-hover:shadow-emerald-900/20 transition-all duration-300">
                 T
               </div>
               <div className="flex flex-col">
-                <div className="flex items-center gap-1.5 leading-none">
-                  <span className="text-lg sm:text-2xl font-black tracking-tight text-[#1c3c18] group-hover:text-[#2e5d26] transition-colors">
-                    TURJO
-                  </span>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#2e5d26] bg-[#e5efe2] group-hover:bg-[#2e5d26] group-hover:text-white px-2 py-0.5 rounded-full transition-all duration-300 shadow-xs">
-                    CORE
-                  </span>
-                </div>
-                <span className="text-[9px] text-[#557b4f] font-semibold uppercase tracking-wider mt-0.5">
+                <span className="font-display text-2xl sm:text-[1.75rem] font-bold tracking-tight text-[#141E13] group-hover:text-[#2e5d26] transition-colors leading-none">
+                  Turjo
+                </span>
+                <span className="text-[9px] text-[#557b4f] font-semibold uppercase tracking-wider mt-1 font-mono hidden sm:block">
                   Full-Stack &amp; AI Systems
                 </span>
               </div>
