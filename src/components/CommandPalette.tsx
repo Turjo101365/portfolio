@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, ArrowRight, ExternalLink } from 'lucide-react';
 import { projects } from '../data/projects';
 import { deployments } from '../data/deployments';
+import { researchItems } from '../data/research';
 import { Project } from '../types';
 
 interface CommandPaletteProps {
@@ -46,6 +47,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     (d) =>
       d.title.toLowerCase().includes(query.toLowerCase()) ||
       d.platform.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const filteredResearch = researchItems.filter(
+    (r) =>
+      r.title.toLowerCase().includes(query.toLowerCase()) ||
+      r.subtitle.toLowerCase().includes(query.toLowerCase()) ||
+      r.venue.toLowerCase().includes(query.toLowerCase()) ||
+      r.status.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
@@ -120,7 +129,40 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             </div>
           )}
 
-          {filteredProjects.length === 0 && filteredDeployments.length === 0 && (
+          {filteredResearch.length > 0 && (
+            <div className="pt-2">
+              <p className="label text-ink-3 text-[10px] mb-2 px-2">Research & Publications</p>
+              <div className="space-y-1">
+                {filteredResearch.map((res) => (
+                  <button
+                    key={res.id}
+                    onClick={() => {
+                      onClose();
+                      const el = document.getElementById('research');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full text-left p-3 hover:bg-paper flex items-center justify-between group transition-colors"
+                  >
+                    <div>
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span className="label bg-[#EEF6ED] text-[#2E5D26] px-1.5 py-0.5 text-[10px] font-mono border border-[#DBE6D6]">
+                          {res.status}
+                        </span>
+                        <span className="text-[10px] text-ink-3 font-mono">{res.venue}</span>
+                      </div>
+                      <p className="font-display text-sm font-bold text-ink group-hover:text-[#2E5D26]">
+                        {res.title}
+                      </p>
+                      <p className="text-xs text-ink-3 line-clamp-1">{res.subtitle}</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-ink-3 group-hover:text-[#2E5D26] group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {filteredProjects.length === 0 && filteredDeployments.length === 0 && filteredResearch.length === 0 && (
             <div className="text-center py-12 text-ink-3">
               <p className="text-sm">No matches found for &quot;{query}&quot;</p>
             </div>

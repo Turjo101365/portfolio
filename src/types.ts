@@ -55,6 +55,32 @@ export interface SkillGroup {
   }[];
 }
 
+export interface ResearchItem {
+  id: string;
+  type: string;
+  status: string;
+  title: string;
+  subtitle: string;
+  authors?: string;
+  affiliation?: string;
+  venue: string;
+  year: string;
+  abstract: string;
+  codeUrl?: string;
+  findings?: string[];
+  method?: string[];
+  approach?: string[];
+  safeguards?: string[];
+  metricsTable?: {
+    language: string;
+    script: string;
+    fp16: string;
+    int8: string;
+    nf4: string;
+    delta: string;
+  }[];
+}
+
 export interface ResearchPaper {
   id: string;
   title: string;
