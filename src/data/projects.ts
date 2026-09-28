@@ -74,8 +74,9 @@ export const projects: Project[] = [
     year: '2026',
     accent: 'indigo',
     technologies: ['TypeScript 5.5', 'Node.js', 'Express', 'React 18', 'Prisma ORM', 'MySQL 8', 'Ollama', 'Docker Compose', 'Chart.js'],
+    liveUrl: 'https://acadiq-platform.onrender.com',
     githubUrl: 'https://github.com/Turjo101365/AcadIQ',
-    isLive: false,
+    isLive: true,
     achievement: '🚀 AUST CSE Carnival AI Build Hackathon',
     badgeLabel: 'Hackathon · Multi-LLM Jury',
     caseStudy: {
@@ -137,8 +138,9 @@ export const projects: Project[] = [
     year: '2026',
     accent: 'purple',
     technologies: ['JavaScript', 'Three.js (WebGL 2.0)', 'MediaPipe Vision (WASM)', 'React 18', 'Ollama LLM', 'Tailwind CSS', 'WebAssembly'],
+    liveUrl: 'https://human-bio-simulator-dna.onrender.com',
     githubUrl: 'https://github.com/Turjo101365/DNA',
-    isLive: false,
+    isLive: true,
     achievement: '🧬 Zero-Cloud Vision & Shader Architecture',
     badgeLabel: 'Edge Vision · WebGL 2.0',
     caseStudy: {
