@@ -13,8 +13,8 @@ export const projects: Project[] = [
     liveUrl: 'https://frontend-nine-ashen-17.vercel.app',
     githubUrl: 'https://github.com/Turjo101365/Goli-Transit',
     isLive: true,
-    achievement: '🏆 Champion, IEEE WIE Day 2026 · 🎖️ 4th Place, AUST CSE Carnival Hackathon',
-    badgeLabel: 'Hackathon · National Champion',
+    
+    badgeLabel: 'Full-Stack · Routing Engine',
     caseStudy: {
       overview: 'Dhaka is one of the densest cities on earth, characterized by informal narrow streets (golis) where four-wheel vehicles cannot enter, unpredictable road blockages, and an emerging metro corridor (MRT-6). Traditional mapping services fail to reflect multimodal local reality.',
       problem: 'Commuters frequently experience multi-hour delays because conventional navigation assumes homogeneous vehicle access and static road graphs, failing to calculate mode-switch penalties or narrow alley shortcuts.',

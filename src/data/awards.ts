@@ -2,26 +2,6 @@ import { Award } from '../types';
 
 export const awards: Award[] = [
   {
-    id: 'ieee-wie-2026',
-    title: 'National Champion',
-    event: 'IEEE WIE Day 2026 National Idea Presentation Competition, Southeast University',
-    date: 'Jul 2026',
-    position: 'Champion (1st Place)',
-    project: 'Goli Transit',
-    type: 'competition',
-    accent: 'crimson'
-  },
-  {
-    id: 'aust-carnival-hackathon',
-    title: '4th Place Finalist',
-    event: 'AUST CSE Carnival Hackathon',
-    date: 'Apr 2026',
-    position: '4th Place',
-    project: 'Goli Transit',
-    type: 'hackathon',
-    accent: 'crimson'
-  },
-  {
     id: 'bup-cse-fest-2026',
     title: 'Hackathon Finalist & Showcase',
     event: 'BUP CSE Fest 2026 Software & AI Hackathon',
@@ -40,5 +20,25 @@ export const awards: Award[] = [
     project: 'AcadIQ',
     type: 'hackathon',
     accent: 'indigo'
+  },
+  {
+    id: 'quantization-research',
+    title: 'Empirical AI Research Pipeline',
+    event: 'Multilingual LLM Quantization & Precision Benchmark Study',
+    date: '2026',
+    position: 'Research Showcase',
+    project: 'BELEBELE Benchmark',
+    type: 'academic',
+    accent: 'crimson'
+  },
+  {
+    id: 'mela-architecture',
+    title: 'High-Throughput Concurrency Architecture',
+    event: 'Enterprise Relational Database & Concurrency Control Showcase',
+    date: '2026',
+    position: 'Architecture Showcase',
+    project: 'MELA',
+    type: 'academic',
+    accent: 'teal'
   }
 ];

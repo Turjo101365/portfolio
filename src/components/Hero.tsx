@@ -94,16 +94,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         <ul className="mt-16 flex flex-wrap gap-px border border-rule bg-rule shadow-sm">
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
             <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-crimson" />
-            <p className="label text-crimson">National Champion</p>
+            <p className="label text-crimson">AI Systems & Hackathons</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
-              IEEE WIE Day 2026 National Idea Presentation Competition
+              BUP CSE Fest & AUST CSE Carnival AI Build Hackathon Projects
             </p>
           </li>
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
             <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-indigo" />
-            <p className="label text-indigo">Hackathon Finalist</p>
+            <p className="label text-indigo">Architectural Rigor</p>
             <p className="mt-2 text-[15px] leading-snug text-ink-2 font-medium">
-              AUST CSE Carnival Hackathon (4th Place) & BUP CSE Fest Hackathon
+              Database row-level concurrency locking & exact LP optimization
             </p>
           </li>
           <li className="relative flex-1 basis-64 bg-white px-6 py-5">
